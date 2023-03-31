@@ -1,0 +1,65 @@
+.login{
+    padding: 10px;
+    background-image: url(../../imgs/loginbackground.jpg);
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+}
+.container1{
+    max-width: 450px;
+    min-height: 550px;
+    margin: 30px auto;
+    background-color: white;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow:  2px 10px 10px rgba(0, 0, 0, 0.637);
+}
+.container1 form{
+    width: 100%;
+}
+.container1 form label{
+    display: block;
+    margin-bottom: 5px;
+}
+.container1 form .input {
+    display: flex;
+    margin-bottom: 30px;
+    background-color: white;
+    align-items: center;
+    padding: 10px 10px 10px 0;
+    border: 1px solid #aaa;
+}
+.container1 form .input input{
+    width: 90%;
+    border: none;
+    outline: none;
+    padding: 0 0 0 9px;
+}
+.container1 form svg{
+    fill: #aaa;
+}
+.container1 a#forget{
+    display: block;
+    text-align: end;
+    text-decoration: none;
+    color: red;
+    font-size: .9rem;
+    font-weight: 500;
+}
+.container1 form button{
+    display: block;
+    margin:  20px auto 0;
+    width: 80%;
+    padding: 20px 10px;
+    background-color: rgb(32, 32, 168);
+    color: white;
+    border: none;
+    outline: none;
+}
+.container1 ul{
+    display: flex;
+}
