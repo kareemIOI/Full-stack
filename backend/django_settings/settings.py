@@ -9,10 +9,16 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
+import environ
 import os
 from pathlib import Path
 
+# Initialise environment variables
+env = environ.Env()
+environ.Env.read_env()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -29,18 +35,46 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+############################# STANDARD CONFIGURATIONS FOR PRODUCTION ENVIROMENT #########################
+############################# NOT WORKING YET.. NEEDS DEBUGGING ########################################
+# APPLICATION_APPS = [
+#     'apps.home',
+#     'apps.admin',
+#     'apps.students',
+#     'apps.teachers',
+# ]
 
+# THIRD_PARTY_APPS = [
+#     'whitenoise',
+#     'corsheaders',
+#     'rest_framework'
+# ]
+
+# LOCAL_APPS = [
+#     "django.contrib.admin",
+#     "django.contrib.auth",
+#     "django.contrib.contenttypes",
+#     "django.contrib.sessions",
+#     "django.contrib.messages",
+#     "django.contrib.staticfiles",
+# ]
+# INSTALLED_APPS = [APPLICATION_APPS + THIRD_PARTY_APPS + LOCAL_APPS]
 INSTALLED_APPS = [
+    'apps.manager',
+    'apps.home',
+    'apps.students',
+    'apps.teachers',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    'apps.home',
+    'whitenoise',
     'corsheaders',
-    'rest_framework',
+    'rest_framework'
 ]
+
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -48,6 +82,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -85,7 +120,7 @@ WSGI_APPLICATION = "django_settings.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": 'SchoolDB',
+        "NAME": '',
         'USER': 'manager',
         'PASSWORD': 'manager',
         'HOST': '127.0.0.1',
