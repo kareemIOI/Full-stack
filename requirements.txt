@@ -1,0 +1,37 @@
+asgiref==3.6.0
+attrs==22.2.0
+autopep8 @ file:///opt/conda/conda-bld/autopep8_1650463822033/work
+certifi @ file:///work/ci_py311/certifi_1676822443922/work/certifi
+coverage==7.2.2
+Django==4.1.7
+django-cors-headers==3.14.0
+django-environ==0.10.0
+django-rest-framework==0.1.0
+djangorestframework==3.14.0
+environ==1.0
+iniconfig==2.0.0
+node==1.2
+npm==0.1.1
+odict==1.9.0
+optional-django==0.1.0
+packaging==23.0
+Pillow==9.4.0
+pluggy==1.0.0
+plumber==1.7
+psycopg2==2.9.5
+pycodestyle @ file:///work/ci_py311/pycodestyle_1677708783451/work
+Pygments==2.14.0
+pytest==7.2.2
+pytest-django==4.5.2
+pytz==2022.7.1
+sqlparse==0.4.3
+toml @ file:///tmp/build/80754af9/toml_1616166611790/work
+whitenoise==6.4.0
+zope.component==5.1.0
+zope.deferredimport==4.4
+zope.deprecation==5.0
+zope.event==4.6
+zope.hookable==5.4
+zope.interface==6.0
+zope.lifecycleevent==4.4
+zope.proxy==5.0.0
