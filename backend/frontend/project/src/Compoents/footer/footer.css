@@ -1,0 +1,26 @@
+footer {
+    /* background-color: blue; */
+    min-height: 30vh;
+    padding: 20px 0;
+    background-image: url('../../imgs/loginbackground.jpg');
+}
+
+.line {
+    width: 60px;
+    height: 3px;
+    background-color: rgb(0, 255, 106);
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+footer .footer-cols {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    /* border: 1px solid red; */
+    /* background-color: yellow; */
+    gap: 10px;
+}
+
+footer .footer-cols div {
+    /* border: 1px solid red; */
+}

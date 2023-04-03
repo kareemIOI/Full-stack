@@ -1,0 +1,29 @@
+*{
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* outline: 1px solid gold; */
+}
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none !important;
+  
+}
+body{
+  font-family:  sans-serif;
+  /* overflow: hidden; */
+}
+table{
+  margin: 0;
+}
+.purple-text{
+  color: rgb(184, 0, 184);
+}
+.purple-background{
+  background-color: rgb(184, 0, 184) ;
+}

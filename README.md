@@ -16,4 +16,3 @@ tasks:
 2_ then make sure thats works from the login page ... if it works ..
 3_ if the email was pointing to a student .... then go to student dashboard ...and change the name from componets > Header .... or Its an admain the same 
 4_at the same time change the Number of Students within componets > Cards > AdmainIntroCards 
-

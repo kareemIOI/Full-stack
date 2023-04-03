@@ -1,0 +1,152 @@
+.SideBar-Students {
+    padding: 85px 0 70px 10px;
+    width: 230px;
+}
+
+@media (max-width:1000px) {
+    .SideBar-Students {
+        display: none;
+    }
+
+    .Miniside-bar {
+        display: block;
+    }
+
+    .landing {
+        padding: 70px 20px 10px 20px;
+    }
+}
+
+@media (min-width:1000px) {
+    .Miniside-bar {
+        display: none;
+    }
+}
+
+.SideBar-Students ul li {
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 16px 0 0 10px;
+    transition: .2s ease;
+    position: relative;
+}
+
+/* .SideBar-Students ul li .topPiece {
+    opacity: 0;
+    width: 20px;
+    height: 16px;
+    position: absolute;
+    right: 0px;
+    top: -16px;
+    transition: .2s ease;
+    z-index: 111;
+    pointer-events: none;
+
+}
+
+.SideBar-Students ul li .topPiece::before {
+    content: '';
+    width: 20px;
+    height: 16px;
+    top: 0px;
+    position: absolute;
+    right: 0px;
+    border-radius: 100% 0% 100% 0% / 0% 0% 100% 100%;
+    transition: .2s ease;
+    z-index: 111;
+    pointer-events: none;
+}
+
+.SideBar-Students ul li .bottomPiece {
+    opacity: 0;
+    width: 20px;
+    height: 16px;
+    position: absolute;
+    background-color: #691818;
+    right: 0;
+    bottom: -16px;
+    transition: .2s ease;
+    pointer-events: none;
+}
+
+.SideBar-Students ul li .bottomPiece::before {
+    content: '';
+    opacity: 1;
+    width: 20px;
+    height: 16px;
+    position: absolute;
+    right: 0;
+    border-radius: 0% 100% 100% 0% / 0% 100% 0% 100%;
+    bottom: 0px;
+    transition: .2s ease;
+    pointer-events: none;
+    z-index: 111;
+} */
+
+.SideBar-Students ul li a {
+    color: white;
+    text-decoration: none;
+    transition: .5s ease;
+}
+
+.SideBar-Students ul li a:hover {
+    padding-left: 5px;
+}
+
+.SideBar-Students ul li.active {
+    background-color: #ececec;
+
+}
+
+.SideBar-Students ul li .bi,
+.Miniside-bar ul li .bi {
+    /* fill:white; */
+}
+.SideBar-Students ul li.active .bi {
+    /* fill: purple; */
+}
+.SideBar-Students ul li.active .topPiece,
+.SideBar-Students ul li.active .bottomPiece {
+    opacity: 1;
+}
+.SideBar-Students ul li.active a {
+    color: #865da7;
+}
+
+
+
+.Miniside-bar {
+    z-index: 22;
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    left: 0px;
+    top: 0;
+    padding: 100px 20px;
+    /* background-color: rgb(128, 5, 158); */
+    background-color: rgb(129, 15, 206);
+    transition: .6s ease;
+}
+
+.Miniside-bar ul li a {
+    color: white;
+    text-decoration: none;
+    transition: .5s ease;
+    font-size: 18px;
+}
+
+.Miniside-bar ul li {
+    margin-bottom: 20px;
+}
+
+.Miniside-bar button {
+    /* width: 20px; */
+    padding: 10px;
+    height: 40px;
+    color: white;
+    border: none;
+    background-color: rgb(129, 15, 206);
+    position: absolute;
+    left: 100%;
+    top: 300px;
+}
