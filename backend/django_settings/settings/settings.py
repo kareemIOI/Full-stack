@@ -34,46 +34,27 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-# Application definition
-############################# STANDARD CONFIGURATIONS FOR PRODUCTION ENVIROMENT #########################
-############################# NOT WORKING YET.. NEEDS DEBUGGING ########################################
-# APPLICATION_APPS = [
-#     'apps.home',
-#     'apps.admin',
-#     'apps.students',
-#     'apps.teachers',
-# ]
-
-# THIRD_PARTY_APPS = [
-#     'whitenoise',
-#     'corsheaders',
-#     'rest_framework'
-# ]
-
-# LOCAL_APPS = [
-#     "django.contrib.admin",
-#     "django.contrib.auth",
-#     "django.contrib.contenttypes",
-#     "django.contrib.sessions",
-#     "django.contrib.messages",
-#     "django.contrib.staticfiles",
-# ]
-# INSTALLED_APPS = [APPLICATION_APPS + THIRD_PARTY_APPS + LOCAL_APPS]
-INSTALLED_APPS = [
-    'apps.manager',
-    'apps.home',
-    'apps.students',
-    'apps.teachers',
+DEFAULT_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+]
+
+THIRD_PARTY_APPS = [
     'whitenoise',
     'corsheaders',
     'rest_framework'
 ]
+
+LOCAL_APPS = [
+    'apps.home',
+    'apps.students',
+    'apps.teachers',
+]
+INSTALLED_APPS = DEFAULT_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 
 MIDDLEWARE = [
