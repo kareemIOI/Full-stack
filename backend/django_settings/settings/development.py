@@ -1,8 +1,8 @@
-from .base import *
+# from .base import *
 
-DEBUG = True
+# DEBUG = True
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # DEBUG_TOOLBAR_CONFIG = [
 #     'JQUERY_URL': '',
