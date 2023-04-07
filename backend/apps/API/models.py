@@ -42,7 +42,7 @@ class AddUsers(models.Model):
     Phone = models.CharField(max_length = 10)
     father_name = models.CharField(max_length = 255)
     mother_name = models.CharField(max_length = 255)
-    short_bio = models.TextField()
+    short_bio = models.CharField(max_length = 200)
     # created_at = models.DateTimeField(auto_now_add=True)
     # updated_at = models.DateTimeField(auto_now=True)
 
