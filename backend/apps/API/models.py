@@ -2,10 +2,10 @@ from django.db import models
 
 # Create your models here.
 
-class AddUsers(models.Model):
+class User(models.Model):
 
 
-    GENDER_CJOICES = (
+    GENDER_CHOICES = (
         ('M', 'male'),
         ('F', 'female'),
     )
@@ -43,8 +43,10 @@ class AddUsers(models.Model):
     father_name = models.CharField(max_length = 255)
     mother_name = models.CharField(max_length = 255)
     short_bio = models.CharField(max_length = 200)
-    # created_at = models.DateTimeField(auto_now_add=True)
-    # updated_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    ifLogged = models.BooleanField(default=False)
+    token = models.CharField(max_length=500, null=True, default="")
 
     def __str__(self):
         return self.first_name + " " + self.last_name

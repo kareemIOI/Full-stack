@@ -16,25 +16,23 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, re_path, include
 # from apps.home import views
-from apps.API import views
-
 from django.views.generic import TemplateView
 urlpatterns = [
     path("admin/", admin.site.urls),
-    
+    path('', include('apps.home.urls')),
+
     #! TESTING WITH LOCAL DATA
     # re_path(r'^api/students/$', views.students_list),
     # re_path(r'^api/students/([0-9])$', views.students_detail),
-    
-    re_path(r'^api/adduser/$', views.add_list),
-    re_path(r'^api/adduser/([0-9])$', views.User_details),
+
+    # re_path(r'^api/adduser/$', views.add_list),
+    # re_path(r'^api/adduser/([0-9])$', views.User_details),
     
     #! URLS FOR PROJECT FILES
-    path('', TemplateView.as_view(template_name = 'index.html')),
+    # path('', TemplateView.as_view(template_name = 'index.html')),
     path('stu/', TemplateView.as_view(template_name = 'index.html')),
     
     #! EXPOSING ENDPOINTS TO FRONT-END
     path('admain/', include('apps.API.urls')),
     path('api/', include('apps.API.urls')),
-
 ]
