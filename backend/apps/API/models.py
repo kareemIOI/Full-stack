@@ -5,12 +5,12 @@ from django.db import models
 class User(models.Model):
 
 
-    GENDER_CHOICES = (
+    GENDER_CHOICES = [
         ('M', 'male'),
         ('F', 'female'),
-    )
+    ]
     
-    BLOOD_GROUP_CHOICES = (
+    BLOOD_GROUP_CHOICES = [
         ('A-', 'A-'),
         ('A+', 'A+'),
         ('B-', 'B-'),
@@ -19,20 +19,20 @@ class User(models.Model):
         ('AB+','AB+'),
         ('O+','O+'),
         ('O-','O-'),
-    )
+    ]
     
-    STATUS_USER = (
+    STATUS_USER = [
         ('Student','Student'),
         ('Teacher','Teacher'),
         ('Parent','Parent'),
         ('Admain','Admain'),
-    )
+    ]
 
-    RELIGION_STATUS = (
+    RELIGION_STATUS = [
         ('Muslim','Muslim'),
         ('Chritian','Chritian'),
         ('Jewish','Jewish'),
-    )
+    ]
 
     first_name  = models.CharField(max_length=255)
     last_name = models.CharField(max_length = 255)
@@ -47,6 +47,10 @@ class User(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     ifLogged = models.BooleanField(default=False)
     token = models.CharField(max_length=500, null=True, default="")
-
+    gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
+    blood = models.CharField(max_length = 2, choices = BLOOD_GROUP_CHOICES)
+    status = models.CharField(max_length = 15, choices = STATUS_USER)
+    religion = models.CharField(max_length = 10, choices = RELIGION_STATUS)
+    
     def __str__(self):
         return self.first_name + " " + self.last_name
