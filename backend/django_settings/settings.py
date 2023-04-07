@@ -50,6 +50,8 @@ THIRD_PARTY_APPS = [
 ]
 
 LOCAL_APPS = [
+    'apps.API',
+    'apps.registration',
     'apps.home',
     'apps.students',
     'apps.teachers',
@@ -103,12 +105,21 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": 'SchoolDB',
         'USER': 'manager',
-        'PASSWORD': '1234',
+        'PASSWORD': 'manager',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
 }
 
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated', 
+        ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ]
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators

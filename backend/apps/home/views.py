@@ -7,7 +7,6 @@ from .serializers import *
 
 # Create your views here.
 
-
 @api_view(['GET', 'POST'])
 def students_list(request):
     if request.method == 'GET':

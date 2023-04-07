@@ -17,10 +17,20 @@ from django.contrib import admin
 from django.urls import path, re_path, include
 from apps.home import views
 from django.views.generic import TemplateView
+
 urlpatterns = [
     path("admin/", admin.site.urls),
+    
+    #! TESTING WITH LOCAL DATA
     re_path(r'^api/students/$', views.students_list),
     re_path(r'^api/students/([0-9])$', views.students_detail),
+    
+    #! URLS FOR PROJECT FILES
     path('', TemplateView.as_view(template_name = 'index.html')),
-    path('stu/', TemplateView.as_view(template_name = 'index.html'))
+    path('stu/', TemplateView.as_view(template_name = 'index.html')),
+    path('admain', include('apps.manager.urls')),
+    
+    #! EXPOSING ENDPOINTS TO FRONT-END
+    path('api/', include('apps.API.urls')),
+
 ]
