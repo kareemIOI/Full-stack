@@ -25,6 +25,7 @@ function AddUserForm() {
     //     var image = document.getElementById('output');
     //     image.src = URL.createObjectURL(event.target.files[0]);
     // }
+    //! api/register
     function RsetInputs() {
         const confimationn = window.confirm("are you sure?")
         if (confimationn) {
