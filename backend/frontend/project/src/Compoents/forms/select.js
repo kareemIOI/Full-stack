@@ -3,11 +3,11 @@ import './inputs.css'
 
 
 
-function Select({ title, options }) {
+function Select({ title, options , FormData }) {
     return (
         <>
             <label className='d-block text-black-50 fs-6'>{title}</label>
-            <select>
+            <select onChange={e =>{ if(FormData) FormData[title.toLowerCase()] = e.target.value}}>
                 {options.map((option , index) => (
                     <option key ={index}>{option}</option>
                 ))}
