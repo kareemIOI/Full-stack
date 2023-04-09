@@ -1,16 +1,16 @@
-.Adduser{
-}
 .Adduser .Input-Container{
     max-width: 300px;
     width: 100%;
     flex: 1;
     width: 100%;
-    /* border: 1px solid blue; */
 }
 .Adduser input , .Adduser textarea{
     padding: 4px ;
     outline: none ;
     border: 1px solid #aaaaaa84;
+}
+label{
+    color: purple;
 }
 .Adduser #img-Uploaded{
     width: 200px;
@@ -26,4 +26,16 @@ select{
     background-color: White;
     outline: none;
     padding:  5px 10px;
+}
+button.addform-btn{
+    width: 70px;
+    height: 40px;
+    background-color: white;
+    color: purple;
+    border: 1px solid purple;
+    transition: .2s ease;
+}
+button.addform-btn:hover{
+    background-color: purple;
+    color: white;
 }

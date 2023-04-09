@@ -10,7 +10,6 @@ const data = [
 
 export default function Piechart({ title, data1 }) {
     let Theme = useContext(ThemeContext).Theme
-    console.log(Theme)
     const COLORS = [Theme.text, '#ccc',];
     const style1 = {
         width: 40,

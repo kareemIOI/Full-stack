@@ -1,2 +1,3 @@
-TODO fix the static folder issue (frontend)
-prepare database of the user with some fake data 
+1_ prepare database of the user with some fake data (backend) 
+2_ fix Url of the Admain adduser api with the right data form (backend)
+3_ check NewUpdates.txt file

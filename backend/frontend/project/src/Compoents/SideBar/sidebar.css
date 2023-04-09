@@ -1,6 +1,7 @@
 .SideBar-Students {
     padding: 85px 0 70px 10px;
     width: 230px;
+    height: 100%;
 }
 
 @media (max-width:1000px) {

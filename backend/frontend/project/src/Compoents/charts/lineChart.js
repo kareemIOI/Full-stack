@@ -35,7 +35,6 @@ const data = [
 
 export default function Linechart() {
     const Theme = useContext(ThemeContext).Theme
-    console.log(Theme)
     return (
         <div className='lineChart-contianer p-3'>
             <h5 className='mb-3'>Earings</h5>

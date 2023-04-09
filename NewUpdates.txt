@@ -1,0 +1,22 @@
+2023.4.9 ::
+
+1_ adduser's form is done ....it will send json object with these data :
+{
+    firstname:
+    lastname:
+    email:
+    password:
+    address: 
+    phone:
+    father:
+    mother:
+    bio:
+    gender:
+    blood:
+    status:
+    relgion:
+    joined year:
+    joined month:
+    joined day:
+}
+
