@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from django.contrib.auth.hashers import make_password
 from .models import User
-
+from django.shortcuts import redirect
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -12,6 +12,7 @@ class UserSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         validated_data['password'] = make_password(validated_data.get('password'))
         user = super().create(validated_data)
+        print(user)
         return user
 
     def update(self, instance, validated_data):
@@ -21,9 +22,9 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class UserLoginSerializer(serializers.Serializer):
-    email = serializers.EmailField()
-    password = serializers.CharField()
-
+    class Meta:
+        model = User
+        fields = ('username', 'password')
 
 class UserTokenSerializer(serializers.Serializer):
     token = serializers.CharField()
