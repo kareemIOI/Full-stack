@@ -1,39 +1,33 @@
-from django.shortcuts import redirect
-from rest_framework import generics
+from rest_framework import generics, permissions
 from rest_framework.response import Response
-from rest_framework.status import HTTP_200_OK, HTTP_400_BAD_REQUEST
+from rest_framework.views import APIView
+from rest_framework.authtoken.models import Token
+from django.contrib.auth import authenticate, login, logout
 from .models import User
-from .serializers import UserSerializer, UserLoginSerializer, UserLogoutSerializer
+from .serializers import UserSerializer
 
-
-class Record(generics.ListCreateAPIView):
-    # get method handler
-    queryset = User.objects.all()
+class UserCreateAPIView(generics.CreateAPIView):
     serializer_class = UserSerializer
-
-
-class Login(generics.GenericAPIView):
-    # get method handler
     queryset = User.objects.all()
-    serializer_class = UserLoginSerializer
+    permission_classes = [permissions.AllowAny]
 
-    def post(self, request, *args, **kwargs):
-        serializer_class = UserLoginSerializer(data=request.data)
-        if serializer_class.is_valid(raise_exception=True):
-            return Response(serializer_class.data, status=HTTP_200_OK)
-        return Response(serializer_class.errors, status=HTTP_400_BAD_REQUEST)
+class UserLoginAPIView(APIView):
+    permission_classes = [permissions.AllowAny]
 
+    def post(self, request):
+        username = request.data.get('username')
+        password = request.data.get('password')
 
-class Logout(generics.GenericAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserLogoutSerializer
+        user = authenticate(request, username=username, password=password)
 
-    def post(self, request, *args, **kwargs):
-        serializer_class = UserLogoutSerializer(data=request.data)
-        if serializer_class.is_valid(raise_exception=True):
-            return Response(serializer_class.data, status=HTTP_200_OK)
-        return Response(serializer_class.errors, status=HTTP_400_BAD_REQUEST)
+        if user is not None:
+            login(request, user)
+            token, created = Token.objects.get_or_create(user=user)
+            return Response({'token': token.key})
+        else:
+            return Response({'error': 'Invalid credentials'})
 
-
-def index(request):
-    return redirect('/api/login')
+class UserLogoutAPIView(APIView):
+    def post(self, request):
+        logout(request)
+        return Response({'success': 'User has been logged out'})

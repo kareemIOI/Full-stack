@@ -6,7 +6,6 @@ class User(models.Model):
         ('M', 'male'),
         ('F', 'female'),
     )
-    
     BLOOD_GROUP_CHOICES = (
         ('A-', 'A-'),
         ('A+', 'A+'),
@@ -31,9 +30,9 @@ class User(models.Model):
         ('Jewish', 'Jewish'),
     )
 
-    username = models.CharField(max_length=255, null=False)
+    username = models.CharField(max_length=255, null=False, default = 'none')
     email = models.EmailField(max_length=255, null=False)
-    password = models.CharField(max_length=50,  default = 'none')
+    password = models.CharField(max_length=128,  default = 'none')
     first_name  = models.CharField(max_length=255,default = 'none')
     last_name = models.CharField(max_length=255,  default = 'none')
     address = models.CharField(max_length=255, default = '')
