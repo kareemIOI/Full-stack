@@ -21,7 +21,7 @@ class User(models.Model):
         ('Student', 'Student'),
         ('Teacher', 'Teacher'),
         ('Parent', 'Parent'),
-        ('Admin', 'Admin'),
+        ('Admain', 'Admain'),
     )
     
     RELIGION_STATUS = (
@@ -40,10 +40,10 @@ class User(models.Model):
     father_name = models.CharField(max_length=255, default = 'none')
     mother_name = models.CharField(max_length=255, default = 'none' )
     short_bio = models.CharField(max_length=200, default = 'none')
-    gender = models.CharField(max_length=6, choices=GENDER_CHOICES,  default = 'none')
+    # gender = models.CharField(max_length=6, choices=GENDER_CHOICES,  default = 'none')
     blood = models.CharField(max_length=3, choices=BLOOD_GROUP_CHOICES, default = '')
     status = models.CharField(max_length=15, choices=STATUS_USER,  default = 'none')
-    religion = models.CharField(max_length=10, choices=RELIGION_STATUS, )
+    # religion = models.CharField(max_length=10, choices=RELIGION_STATUS, )
     ifLogged = models.BooleanField(default=False)
 
     def __str__(self):

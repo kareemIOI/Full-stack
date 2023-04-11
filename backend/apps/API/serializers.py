@@ -6,7 +6,7 @@ from django.shortcuts import redirect
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('id', 'username', 'email', 'password', 'first_name', 'last_name', 'address', 'Phone','father_name', 'mother_name', 'short_bio', 'gender', 'blood', 'status', 'religion')
+        fields = ('id', 'username', 'email', 'password', 'first_name', 'last_name', 'address', 'Phone','father_name', 'mother_name', 'short_bio', 'blood', 'status')
         extra_kwargs = {'password': {'write_only': True}}
 
     def create(self, validated_data):

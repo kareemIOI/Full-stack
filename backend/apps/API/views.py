@@ -6,6 +6,7 @@ from django.contrib.auth import authenticate, login, logout
 from .models import User
 from .serializers import UserSerializer, UserLoginSerializer
 from rest_framework.permissions import AllowAny
+from django.shortcuts import render
 
 class UserCreateAPIView(generics.CreateAPIView):
     serializer_class = UserSerializer
@@ -40,3 +41,6 @@ class UserLogoutAPIView(APIView):
     def post(self, request):
         logout(request)
         return Response({'success': 'User has been logged out'})
+
+def index(request):
+    return render(request, 'index.html')
