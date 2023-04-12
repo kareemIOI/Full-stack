@@ -20,3 +20,10 @@
     joined day:
 }
 
+12 - Apr:
+
+AddUser functionality is done
+
+login -- not done yet
+
+models.py default values has been editied

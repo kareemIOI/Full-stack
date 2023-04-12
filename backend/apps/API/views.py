@@ -16,27 +16,22 @@ class UserCreateAPIView(generics.CreateAPIView):
 class UserLoginAPIView(APIView):
     permission_classes = [permissions.AllowAny]
 
-    def get(self, request):
-        serializer_class = UserLoginSerializer
-        print(serializer_class)
-        queryset = User.objects.all()
-        print(queryset)
-        permission_classes = [permissions.AllowAny]
-        # Handle GET requests here
-        return Response({'message': 'This is a GET request'})
-
     def post(self, request):
-        username = request.data.get('username')
-        password = request.data.get('password')
-        user = authenticate(request, username=username, password=password)
+        serializer = UserLoginSerializer(data=request.data)
+        if serializer.is_valid():
+            username = serializer.validated_data['username']
+            password = serializer.validated_data['password']
+            user = authenticate(request, username=username, password=password)
 
-        if user is not None:
-            login(request, user)
-            token, created = Token.objects.get_or_create(user=user)
-            return Response({'token': token.key})
+            if user is not None:
+                login(request, user)
+                token, created = Token.objects.get_or_create(user=user)
+                return Response({'username': username, 'password': password, 'token': token.key})
+            else:
+                return Response({'error': 'Invalid credentials'})
         else:
-            return Response({'error': 'Invalid credentials'})
-    
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 class UserLogoutAPIView(APIView):
     def post(self, request):
         logout(request)

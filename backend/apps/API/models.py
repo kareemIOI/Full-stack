@@ -19,7 +19,7 @@ class User(models.Model):
     
     STATUS_USER = (
         ('Student', 'Student'),
-        ('Teacher', 'Teacher'),
+        ('teacher', 'teacher'),
         ('Parent', 'Parent'),
         ('Admain', 'Admain'),
     )
@@ -30,20 +30,20 @@ class User(models.Model):
         ('Jewish', 'Jewish'),
     )
 
-    username = models.CharField(max_length=255, null=False, default = 'none')
+    username = models.CharField(max_length=255, null=False, default = '-')
     email = models.EmailField(max_length=255, null=False)
-    password = models.CharField(max_length=128,  default = 'none')
-    first_name  = models.CharField(max_length=255,default = 'none')
-    last_name = models.CharField(max_length=255,  default = 'none')
-    address = models.CharField(max_length=255, default = '')
-    Phone = models.CharField(max_length=10, default='xxxxxxxxxx')
-    father_name = models.CharField(max_length=255, default = 'none')
-    mother_name = models.CharField(max_length=255, default = 'none' )
-    short_bio = models.CharField(max_length=200, default = 'none')
-    # gender = models.CharField(max_length=6, choices=GENDER_CHOICES,  default = 'none')
-    blood = models.CharField(max_length=3, choices=BLOOD_GROUP_CHOICES, default = '')
-    status = models.CharField(max_length=15, choices=STATUS_USER,  default = 'none')
-    # religion = models.CharField(max_length=10, choices=RELIGION_STATUS, )
+    password = models.CharField(max_length=128,  default = '-')
+    first_name  = models.CharField(max_length=255,default = '-')
+    last_name = models.CharField(max_length=255,  default = '-')
+    address = models.CharField(max_length=255, default = '-')
+    Phone = models.CharField(max_length=10, default='-')
+    father_name = models.CharField(max_length=255, default = '-')
+    mother_name = models.CharField(max_length=255, default = '-' )
+    short_bio = models.CharField(max_length=200, default = '-')
+    gender = models.CharField(max_length=6, choices=GENDER_CHOICES,  default = '-')
+    blood = models.CharField(max_length=3, choices=BLOOD_GROUP_CHOICES, default = '-')
+    status = models.CharField(max_length=15, choices=STATUS_USER,  default = '-')
+    religion = models.CharField(max_length=10, choices=RELIGION_STATUS, default = '-')
     ifLogged = models.BooleanField(default=False)
 
     def __str__(self):
