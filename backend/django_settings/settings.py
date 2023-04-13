@@ -9,13 +9,13 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-# import environ
+import environ
 import os
 from pathlib import Path
 
 # Initialise environment variables
-# env = environ.Env()
-# environ.Env.read_env()
+env = environ.Env()
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-hhiszdmrpyen*r3%19u)r*&z^tdc1192wkqlz5huz@w2mic&-+"
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -52,7 +52,6 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     'apps.API',
     'apps.registration',
-    'apps.home',
     'apps.students',
     'apps.teachers',
 ]
@@ -103,13 +102,14 @@ WSGI_APPLICATION = "django_settings.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": 'School-DB',
+        'NAME': 'School-DB',
         'USER': 'manager',
         'PASSWORD': 'manager',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
 }
+
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
