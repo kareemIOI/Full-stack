@@ -50,3 +50,13 @@ class User(models.Model):
 
     def __str__(self):
         return "{} - {}".format(self.username, self.email)
+
+
+class Contact(models.Model):
+    name = models.name = models.ForeignKey(User,blank = True, null = True, on_delete=models.CASCADE)
+    phone = models.CharField(max_length = 10, default = "")
+    subject = models.TextField(default = "")
+    message = models.TextField(default = "")
+    
+    def __str__(self):
+        return "{} - {}".format(self.name, self.phone)

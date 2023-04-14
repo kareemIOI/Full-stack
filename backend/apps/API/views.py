@@ -3,8 +3,8 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.authtoken.models import Token
 from django.contrib.auth import authenticate, login, logout
-from .models import User
-from .serializers import UserSerializer, UserLoginSerializer
+from .models import User, Contact
+from .serializers import UserSerializer, UserLoginSerializer, UserContactSerializer
 from rest_framework.permissions import AllowAny
 from django.shortcuts import render
 
@@ -39,3 +39,12 @@ class UserLogoutAPIView(APIView):
 
 def index(request):
     return render(request, 'index.html')
+
+
+class UserContactListCreateAPIView(generics.ListCreateAPIView):
+    """
+    API endpoint for listing and creating user contacts.
+    """
+    serializer_class = UserContactSerializer
+    queryset = User.objects.all()
+    permission_classes = [permissions.AllowAny]

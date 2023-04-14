@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import UserCreateAPIView, UserLoginAPIView, UserLogoutAPIView
+from .views import UserCreateAPIView, UserLoginAPIView, UserLogoutAPIView,UserContactListCreateAPIView
 from . import views
 
 #TODO all api endpoints here
@@ -9,4 +9,5 @@ urlpatterns = [
     path('login/', UserLoginAPIView.as_view(), name='login'),
     path('logout/', UserLogoutAPIView.as_view(), name='logout'),
     path('', views.index, name = 'index'),
+    path('contacts/', UserContactListCreateAPIView.as_view(), name='user-contact-list-create'),
 ]

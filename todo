@@ -1,3 +1,8 @@
-1_ prepare database of the user with some fake data (backend) 
-2_ fix Url of the Admain adduser api with the right data form (backend)
-3_ check NewUpdates.txt file
+kareem {
+    1: api for contact form
+    2: login auth
+    3: student apis
+    4: teacher apis
+    5: admin apis
+    6: password auth 6 endpoints
+}

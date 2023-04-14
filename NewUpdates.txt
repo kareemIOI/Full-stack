@@ -20,10 +20,10 @@
     joined day:
 }
 
-12 - Apr:
+April 12 -> 14:
 
-AddUser functionality is done
-
-login -- not done yet
-
-models.py default values has been editied
+    AddUser functionality is done
+    login -- not done yet
+    models.py default values has been editied
+    contacts api endpoint almost done -- 1 bug to fix - auth required
+    planted most api endpoints for (students - teacher - admin )
