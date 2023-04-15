@@ -1,36 +1,41 @@
 from rest_framework import generics, permissions
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework import status
 from rest_framework.authtoken.models import Token
 from django.contrib.auth import authenticate, login, logout
 from .models import User, Contact
 from .serializers import UserSerializer, UserLoginSerializer, UserContactSerializer
 from rest_framework.permissions import AllowAny
 from django.shortcuts import render
+from .serializers import UserLoginSerializer
 
 class UserCreateAPIView(generics.CreateAPIView):
     serializer_class = UserSerializer
     queryset = User.objects.all()
     permission_classes = [permissions.AllowAny]
 
-class UserLoginAPIView(APIView):
-    permission_classes = [permissions.AllowAny]
+
+class UserLoginView(APIView):
+    serializer_class = UserLoginSerializer
 
     def post(self, request):
-        serializer = UserLoginSerializer(data=request.data)
-        if serializer.is_valid():
-            username = serializer.validated_data['username']
-            password = serializer.validated_data['password']
-            user = authenticate(request, username=username, password=password)
+        serializer = self.serializer_class(data=request.data)
+        serializer.is_valid(raise_exception=True)
 
-            if user is not None:
-                login(request, user)
-                token, created = Token.objects.get_or_create(user=user)
-                return Response({'username': username, 'password': password, 'token': token.key})
-            else:
-                return Response({'error': 'Invalid credentials'})
+        username = serializer.validated_data['username']
+        password = serializer.validated_data['password']
+
+        user = authenticate(username=username, password=password)
+
+        if user:
+            token, created = Token.objects.get_or_create(user=user)
+            return Response({'token': token.key})
         else:
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response(
+                {'error': 'Incorrect username or password'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
 
 class UserLogoutAPIView(APIView):
     def post(self, request):
@@ -48,3 +53,9 @@ class UserContactListCreateAPIView(generics.ListCreateAPIView):
     serializer_class = UserContactSerializer
     queryset = User.objects.all()
     permission_classes = [permissions.AllowAny]
+
+
+
+
+
+

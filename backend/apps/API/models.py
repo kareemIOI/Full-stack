@@ -53,7 +53,7 @@ class User(models.Model):
 
 
 class Contact(models.Model):
-    name = models.name = models.ForeignKey(User,blank = True, null = True, on_delete=models.CASCADE)
+    name = models.CharField(max_length = 255, null = False, default = "")
     phone = models.CharField(max_length = 10, default = "")
     subject = models.TextField(default = "")
     message = models.TextField(default = "")
