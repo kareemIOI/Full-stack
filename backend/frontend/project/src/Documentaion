@@ -15,3 +15,7 @@ then the respone of the fetching is html or XML file XXXX
 we use AnimatePresence so we can see our animate fade out 
 we give our parent route a unique key using the locationpathname from my current loaction
 when evey my key changes our route become a new compoent ...so AnimatePresence makes react wait for all the animations are done .. then the component unmounts
+
+
+
+note ... never put a stracture of the pages withthe routes.... only put the routes and maybe nav and footer ... nothing eles

@@ -1,5 +1,5 @@
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom"
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import { useContext } from "react"
 import { ThemeContext } from "../../ThemeContext"
 // pages
@@ -8,7 +8,6 @@ import News from "./New"
 import Porfilestu from "./Portfoliostu"
 import Chatstu from "./chatstu"
 import SettingsStu from "./settingsstu"
-import Cources from "./Cources"
 import Library from "./Library"
 // Componets
 import Header from "../../Compoents/Header/Header"
@@ -17,15 +16,18 @@ import NavBar from "../../Compoents/Navs/DashboardNav"
 import SlideBar from "../../Compoents/SideBar/SideBar"
 import './student.css'
 import { AnimatePresence } from "framer-motion"
+import AllCourses from "./AllCourses"
 
 
 function Studentpage() {
+
+
     const Theme = useContext(ThemeContext)
     let navigate = useNavigate()
     window.onload = function () {
         navigate('/stu')
     }
-    // get the Theme from the localStorge
+    //~ get the Theme from the localStorge
     useEffect(() => {
         if (localStorage.getItem("theme-color")) {
             Theme.toggleTheme(JSON.parse(localStorage.getItem("theme-color")))
@@ -34,6 +36,7 @@ function Studentpage() {
     const location = useLocation()
     return (
         <>
+        {/* <Loadingscreen /> */}
             <NavBar />
             <SlideBar />
             <MiniSideBar />
@@ -45,7 +48,7 @@ function Studentpage() {
                     <AnimatePresence mode="wait">
                         <Routes key={location.pathname} location={location}>
                             <Route path="/" element={<Acadmic />}> </Route>
-                            <Route path="/cources/*" element={<Cources />}> </Route>
+                            <Route path="/allcourses/*" element={<AllCourses/>}> </Route>
                             <Route path="/news" element={<News />}> </Route>
                             <Route path="/news" element={<Library />}> </Route>
                             <Route path="/chat" element={<Chatstu />} />

@@ -99,9 +99,8 @@ function Blog() {
 
                         <div className="col-12 col-lg-8">
                             <div className="Blog-cards-container">
-                                <CourcesCards CardsNumber="4" Section="Blog" />
+                                <CourcesCards CardsNumber="5" Section="Blog" />
                             </div>
-                            <h1 className="">hello</h1>
                         </div>
                     </div>
                 </div>

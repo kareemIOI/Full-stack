@@ -45,7 +45,7 @@ function AddUserForm() {
         if(Object.keys(FormData).length === 13){
 
             //~ send the data
-            fetch(`http://127.0.0.1:8000/api/addUser/`,{
+            fetch(`http://127.0.0.1:8000/api/register`,{
                 method:"POST",
                 headers:{'Accept': 'application/json','Content-Type': 'application/json'},
                 body:JSON.stringify(FormData)

@@ -1,0 +1,17 @@
+.page404{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 60px 20px 0 ;
+    background-color: #e2dbdb;
+    background-image: url(../../imgs/GreenBoard1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+.container-box{
+    padding-bottom: 90px;
+}

@@ -1,0 +1,9 @@
+.btn-toolbar button.active {
+    background-color: var(--purplue-color);
+    color: white;
+}
+
+.btn-toolbar button:hover {
+    background-color: var(--purplue-color);
+    color: white;
+}

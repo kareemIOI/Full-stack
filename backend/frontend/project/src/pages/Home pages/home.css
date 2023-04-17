@@ -531,80 +531,11 @@ main .container {
 
 
 
-.course-card {
-    /* border: 1px solid black; */
-    /* max-width: 400px; */
-    width: 100%;
-    height: 470px;
-    background-color: white;
-    overflow: hidden;
-}
-
-.Courses .course-card .course-card-text .course-card-title {
-    transform: scaleY(.8);
-}
-
-.Courses .course-card p:first-of-type {
-    color: red;
-    font-size: .9rem;
-}
-
-.Courses .course-card-text {
-    background-color: #f7f7f7;
-}
-
-.Courses .course-card-text .course-card-text {
-    color: #636363;
-    font-size: 1rem;
-}
-
-.card-img-conrainerHover {
-    width: 100%;
-    height: 250px;
-    overflow: hidden;
-}
-
-.card-img {
-    width: 100%;
-    height: 250px;
-    background-size: cover;
-}
-
-.hoverImg {
-    transition: .3s ease;
-}
-
-.hoverImg:hover {
-    transform: scale(1.1);
-}
-
-.backgroundimg1 {
-    background-image: url(../../imgs/popularcource1.jpg);
-}
-
-.backgroundimg2 {
-    background-image: url(../../imgs/popularcource2.jpg);
-}
-
-.backgroundimg3 {
-    background-image: url(../../imgs/popularcource3.jpg);
-}
-
-.backgroundimg4 {
-    background-image: url(../../imgs/popularcource4.jpg);
-}
 
 
 
-.btn-toolbar button.active {
-    background-color: var(--purplue-color);
-    color: white;
-}
 
-.btn-toolbar button:hover {
-    background-color: var(--purplue-color);
-    color: white;
-}
+
 
 .purple-text {
     color: var(--purplue-color);

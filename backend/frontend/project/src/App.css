@@ -1,4 +1,4 @@
-*{
+* {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -7,23 +7,29 @@
   box-sizing: border-box;
   /* outline: 1px solid gold; */
 }
-ul{
+
+ul {
   list-style: none;
 }
-a{
+
+a {
   text-decoration: none !important;
-  
+
 }
-body{
-  font-family:  sans-serif;
+
+body {
+  font-family: sans-serif;
   /* overflow: hidden; */
 }
-table{
+
+table {
   margin: 0;
 }
-.purple-text{
+
+.purple-text {
   color: rgb(184, 0, 184);
 }
-.purple-background{
-  background-color: rgb(184, 0, 184) ;
+
+.purple-background {
+  background-color: rgb(184, 0, 184);
 }

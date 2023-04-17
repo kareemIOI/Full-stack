@@ -7,11 +7,19 @@ import './home.css'
 import Courses from "./Courses"
 import HomeNav from "../../Compoents/Navs/HomeNav"
 import Footer from "../../Compoents/footer/footer"
-import Animatepages from "../../AnimatepagesHome"
+import Page404 from "../Notfound page/Page404"
+import { useState } from "react"
 
 
 
 function Home() {
+
+    // used to hide the Footer when you go to 404Page
+    const [NavFooter , setNavsFooter] = useState(true)
+    function ToggleFooter(value){
+        setNavsFooter(value)
+    }
+
     return (
         <>
             <HomeNav />
@@ -22,9 +30,10 @@ function Home() {
                     <Route path='/courses' element={<Courses />} />
                     <Route path='/blog' element={<Blog />} />
                     <Route path='/contact' element={<Contact />} />
+                    <Route path='/*' element={<Page404 ToggleFooter={ToggleFooter} />} /> 
                 </Routes>
             </div>
-            <Footer />
+            {NavFooter &&<Footer /> }
         </>
 
     )
