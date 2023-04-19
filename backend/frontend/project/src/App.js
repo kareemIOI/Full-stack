@@ -20,6 +20,7 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/stu/*' element={<Studentpage />} />
             <Route path='/admain/*' element={<Admain />} />
+            {/* <Route path='/admain/*' element={< />} /> */}
         </Routes>
       </div>
     </ThemeProvider>
