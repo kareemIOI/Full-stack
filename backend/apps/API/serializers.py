@@ -8,8 +8,8 @@ from rest_framework.response import Response
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('id', 'username', 'email', 'password', 'first_name', 'last_name', 'address', 'phone_number','father_name', 'mother_name', 'short_bio')
-        extra_kwargs = {'password': {'write_only': True}}
+        fields = ('id', 'username', 'password', 'first_name', 'last_name', 'address', 'phone_number','father_name', 'mother_name', 'short_bio', 'gender', 'blood_group', 'status', 'religion')
+        # extra_kwargs = {'password': {'write_only': True}}
 
     def create(self, validated_data):
         validated_data['password'] = make_password(validated_data.get('password'))
@@ -23,9 +23,11 @@ class UserSerializer(serializers.ModelSerializer):
         return super().update(instance, validated_data)
 
 class UserLoginSerializer(serializers.ModelSerializer):
+    username = serializers.CharField(max_length = 254)
+    password = serializers.CharField(max_length = 254)
     class Meta:
         model = User
-        fields = ('email', 'password')
+        fields = ('username', 'password')
 
 
 class UserTokenSerializer(serializers.Serializer):

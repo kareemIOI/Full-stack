@@ -6,7 +6,8 @@ urlpatterns = [
     path('', TemplateView.as_view(template_name = 'index.html')),
     path("admin/", admin.site.urls),
     path('stu/', TemplateView.as_view(template_name = 'index.html')),
-    path('admain/', TemplateView.as_view(template_name = 'index.html')),
+    # path('admain/', TemplateView.as_view(template_name = 'index.html')),
+    path('admain/', include('apps.API.urls')),
     path('api/', include('apps.API.urls')),
     path('contact/', include('apps.API.urls')),
 ]

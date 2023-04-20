@@ -4,8 +4,8 @@ from django.utils import timezone
 
 class User(models.Model):
     GENDER_CHOICES = (
-        ('M', 'Male'),
-        ('F', 'Female'),
+        ('Male', 'Male'),
+        ('Female', 'Female'),
     )
     BLOOD_GROUP_CHOICES = (
         ('A-', 'A-'),
@@ -22,7 +22,7 @@ class User(models.Model):
         ('Student', 'Student'),
         ('Teacher', 'Teacher'),
         ('Parent', 'Parent'),
-        ('Admin', 'Admin'),
+        ('Admain', 'Admain'),
     )
 
     RELIGION_CHOICES = (
@@ -32,7 +32,7 @@ class User(models.Model):
     )
 
     username = models.CharField(max_length=255, null=False, default="")
-    email = models.EmailField(max_length=255, null=False)
+    # email = models.EmailField()
     password = models.CharField(max_length=128, default="")
     first_name = models.CharField(max_length=255, default="")
     last_name = models.CharField(max_length=255, default="")
@@ -41,7 +41,7 @@ class User(models.Model):
     father_name = models.CharField(max_length=255, default="", null=True)
     mother_name = models.CharField(max_length=255, default="", null=True)
     short_bio = models.TextField(default="")
-    gender = models.CharField(max_length=6, choices=GENDER_CHOICES, default="")
+    gender = models.CharField(max_length=6, choices=GENDER_CHOICES, default = '')
     blood_group = models.CharField(max_length=3, choices=BLOOD_GROUP_CHOICES, default="")
     status = models.CharField(max_length=15, choices=STATUS_CHOICES, default="")
     religion = models.CharField(max_length=10, choices=RELIGION_CHOICES, default="")
@@ -49,7 +49,7 @@ class User(models.Model):
     created_at = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
-        return "{} - {}".format(self.username, self.email)
+        return self.username + self.password
 
 
 class Contact(models.Model):

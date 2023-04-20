@@ -27,7 +27,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
-# SECRET_KEY ="django-insecure-hhiszdmrpyen*r3%19u)r*&z^tdc1192wkqlz5huz@w2mic&-+"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -70,7 +69,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+CORS_ORIGIN_ALLOW = True
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
@@ -104,8 +103,8 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
         'NAME': 'School-DB',
-        'USER': 'Yamen',
-        'PASSWORD': '1234',
+        'USER': 'manager',
+        'PASSWORD': 'manager',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
