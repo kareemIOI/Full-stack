@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate, login
 from rest_framework import generics, permissions
 from rest_framework.response import Response
-from .serializers import UserSerializer, UserLoginSerializer, UserContactSerializer
+from .serializers import UserSerializer, UserContactSerializer
 from rest_framework.views import APIView
 from rest_framework import status
 from rest_framework.authtoken.models import Token
@@ -9,28 +9,28 @@ from django.contrib.auth import authenticate, login, logout
 from .models import User, Contact
 from django.shortcuts import render
 from rest_framework.permissions import AllowAny
-from .serializers import UserLoginSerializer
+from django.shortcuts import reverse
 
 class UserCreateAPIView(generics.CreateAPIView):
+    permission_classes = [permissions.AllowAny]
     serializer_class = UserSerializer
     queryset = User.objects.all()
-    permission_classes = [permissions.AllowAny]
-    
-class UserLoginView(APIView):
-    serializer_class = UserLoginSerializer
 
-    def post(self, request):
-        print(request.data)
-        serializer = self.serializer_class(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        username = serializer.validated_data['username']
-        password = serializer.validated_data['password']
-        user = authenticate(username=username, password=password)
-        if user:
-            login(request, user)
-            return Response({'message': 'Login successful'})
+def login(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = auth.authenticate(username = username, password = password)
+
+        if user is not None:
+            auth.login(request, user)
+            url = reverse('/')
+            return url
         else:
-            return Response({'message': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
+            messages.info(request, 'invalid password')
+            return redirect('/')
+    else:
+        return render(request, '/')
 
 class UserLogoutAPIView(APIView):
     def post(self, request):

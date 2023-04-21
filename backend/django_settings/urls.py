@@ -8,8 +8,9 @@ urlpatterns = [
     path('stu/', TemplateView.as_view(template_name = 'index.html')),
     # path('admain/', TemplateView.as_view(template_name = 'index.html')),
     path('admain/', include('apps.API.urls')),
-    path('api/', include('apps.API.urls')),
     path('contact/', include('apps.API.urls')),
+    path('api/', include('apps.API.urls')),
+    path('login', include('apps.API.urls')),
 ]
 
 # student_urls = [

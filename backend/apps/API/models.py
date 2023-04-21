@@ -32,7 +32,7 @@ class User(models.Model):
     )
 
     username = models.CharField(max_length=255, null=False, default="")
-    # email = models.EmailField()
+    email = models.EmailField(default = "")
     password = models.CharField(max_length=128, default="")
     first_name = models.CharField(max_length=255, default="")
     last_name = models.CharField(max_length=255, default="")
@@ -49,7 +49,7 @@ class User(models.Model):
     created_at = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
-        return self.username + self.password
+        return self.username + " " + self.email
 
 
 class Contact(models.Model):
