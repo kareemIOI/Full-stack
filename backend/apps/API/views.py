@@ -24,13 +24,13 @@ def login(request):
 
         if user is not None:
             auth.login(request, user)
-            url = reverse('/')
+            url = reverse('index.html')
             return url
         else:
             messages.info(request, 'invalid password')
             return redirect('/')
     else:
-        return render(request, '/')
+        return render(request, 'index.html')
 
 class UserLogoutAPIView(APIView):
     def post(self, request):
@@ -42,12 +42,9 @@ def index(request):
 
 
 class UserContactListCreateAPIView(generics.ListCreateAPIView):
-    """
-    API endpoint for listing and creating user contacts.
-    """
+    permission_classes = [permissions.AllowAny]
     serializer_class = UserContactSerializer
     queryset = User.objects.all()
-    permission_classes = [permissions.AllowAny]
 
 
 

@@ -14,8 +14,6 @@ class UserSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         validated_data['password'] = make_password(validated_data.get('password'))
         user = super().create(validated_data)
-        print(user.data)
-        print(user)
         return user
 
     # def update(self, instance, validated_data):
@@ -31,4 +29,4 @@ class UserSerializer(serializers.ModelSerializer):
 class UserContactSerializer(serializers.ModelSerializer):
     class Meta:
         model = Contact
-        fields = '__all__'
+        fields = ('name', 'phone', 'subject', 'message')
