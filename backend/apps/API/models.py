@@ -22,7 +22,7 @@ class User(models.Model):
         ('Student', 'Student'),
         ('Teacher', 'Teacher'),
         ('Parent', 'Parent'),
-        ('Admain', 'Admain'),
+        ('Admin', 'Admin'),
     )
 
     RELIGION_CHOICES = (
@@ -31,20 +31,20 @@ class User(models.Model):
         ('Jewish', 'Jewish'),
     )
 
-    username = models.CharField(max_length=255, null=False, default="")
-    email = models.EmailField(default = "")
-    password = models.CharField(max_length=128, default="")
-    first_name = models.CharField(max_length=255, default="")
-    last_name = models.CharField(max_length=255, default="")
-    address = models.CharField(max_length=255, default="")
-    phone_number = models.CharField(max_length=10, default="")
-    father_name = models.CharField(max_length=255, default="", null=True)
-    mother_name = models.CharField(max_length=255, default="", null=True)
-    short_bio = models.TextField(default="")
-    gender = models.CharField(max_length=6, choices=GENDER_CHOICES, default = '')
-    blood_group = models.CharField(max_length=3, choices=BLOOD_GROUP_CHOICES, default="")
-    status = models.CharField(max_length=15, choices=STATUS_CHOICES, default="")
-    religion = models.CharField(max_length=10, choices=RELIGION_CHOICES, default="")
+    Username = models.CharField(max_length=255, null=False, default="")
+    Email = models.EmailField(default = "")
+    Password = models.CharField(max_length=128, default="")
+    FirstName = models.CharField(max_length=255, default="")
+    LastName = models.CharField(max_length=255, default="")
+    Address = models.CharField(max_length=255, default="")
+    Phone = models.CharField(max_length=20, default="")
+    FatherName = models.CharField(max_length=255, default="", null=True)
+    MotherName = models.CharField(max_length=255, default="", null=True)
+    ShortBio = models.TextField(default="")
+    Gender = models.CharField(max_length=6, choices=GENDER_CHOICES, default = '')
+    Blood = models.CharField(max_length=3, choices=BLOOD_GROUP_CHOICES, default="")
+    Status = models.CharField(max_length=15, choices=STATUS_CHOICES, default="")
+    Religon = models.CharField(max_length=10, choices=RELIGION_CHOICES, default="")
     if_logged = models.BooleanField(default=False)
     created_at = models.DateTimeField(default=timezone.now)
 

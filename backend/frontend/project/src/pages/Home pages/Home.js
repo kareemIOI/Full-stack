@@ -30,7 +30,7 @@ function Home() {
                     <Route path='/courses' element={<Courses />} />
                     <Route path='/blog' element={<Blog />} />
                     <Route path='/contact' element={<Contact />} />
-                    <Route path='/*' element={<Page404 ToggleFooter={ToggleFooter} />} /> 
+                    {/* <Route path='/*' element={<Page404 ToggleFooter={ToggleFooter} />} />  */}
                 </Routes>
             </div>
             {NavFooter &&<Footer /> }

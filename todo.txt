@@ -1,0 +1,8 @@
+kareem {
+    1: api for contact form
+    2: login auth
+    3: student apis
+    4: teacher apis
+    5: admin apis
+    6: password auth 6 endpoints
+}
