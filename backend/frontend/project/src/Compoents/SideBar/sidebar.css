@@ -1,20 +1,18 @@
-.SideBar-Students {
-    padding: 85px 0 70px 10px;
-    width: 230px;
-    height: 100%;
+.SideBar {
+    width: 240px;
+    transition: .3s ease;
+    position: relative;
+    display: flex;
+
 }
 
 @media (max-width:1000px) {
-    .SideBar-Students {
+    .SideBar {
         display: none;
     }
 
     .Miniside-bar {
         display: block;
-    }
-
-    .landing {
-        padding: 70px 20px 10px 20px;
     }
 }
 
@@ -23,96 +21,58 @@
         display: none;
     }
 }
-
-.SideBar-Students ul li {
-    margin: 10px 0;
-    padding: 15px;
-    border-radius: 16px 0 0 10px;
-    transition: .2s ease;
-    position: relative;
+.SideBar .sidebar-arrow{
+    transition: .3s ease;
+    transform: rotateY(0deg);
 }
-
-/* .SideBar-Students ul li .topPiece {
-    opacity: 0;
-    width: 20px;
-    height: 16px;
-    position: absolute;
-    right: 0px;
-    top: -16px;
-    transition: .2s ease;
-    z-index: 111;
-    pointer-events: none;
-
+.SideBar .sidebar-arrow.active{
+    transform: rotateY(180deg);
 }
-
-.SideBar-Students ul li .topPiece::before {
-    content: '';
-    width: 20px;
-    height: 16px;
+.SideBar ul{
+    padding:0 20px;
     top: 0px;
-    position: absolute;
-    right: 0px;
-    border-radius: 100% 0% 100% 0% / 0% 0% 100% 100%;
-    transition: .2s ease;
-    z-index: 111;
-    pointer-events: none;
+    right: 0;
+}
+.SideBar ul li {
+    margin: 5px 0 0;
+    border-radius: 16px 10px;
+    position: relative;
+    cursor: pointer;
+    transition: .3s ease;
 }
 
-.SideBar-Students ul li .bottomPiece {
-    opacity: 0;
-    width: 20px;
-    height: 16px;
-    position: absolute;
-    background-color: #691818;
-    right: 0;
-    bottom: -16px;
-    transition: .2s ease;
-    pointer-events: none;
-}
-
-.SideBar-Students ul li .bottomPiece::before {
-    content: '';
-    opacity: 1;
-    width: 20px;
-    height: 16px;
-    position: absolute;
-    right: 0;
-    border-radius: 0% 100% 100% 0% / 0% 100% 0% 100%;
-    bottom: 0px;
-    transition: .2s ease;
-    pointer-events: none;
-    z-index: 111;
-} */
-
-.SideBar-Students ul li a {
+/* when last div outside the ul .... or it will be SideBar ul li a */
+.SideBar  a {
+    display: block;
+    padding: 10px;
     color: white;
     text-decoration: none;
     transition: .5s ease;
+    user-select: none;
+}
+.SideBar a *{
+    pointer-events: none;
 }
 
-.SideBar-Students ul li a:hover {
-    padding-left: 5px;
+.SideBar ul li:not(.active) a:hover {
+    padding-left: 15px;
 }
-
-.SideBar-Students ul li.active {
+.SideBar ul li.active {
     background-color: #ececec;
 
 }
+.SideBar ul li:not(.active) .bi {
+    fill: white;
+}
+.sidebar-logout-section div{
+    display: flex;
+    transition: .3s 2s ease;
+    transition-delay: 2s;
+}
 
-.SideBar-Students ul li .bi,
-.Miniside-bar ul li .bi {
-    /* fill:white; */
-}
-.SideBar-Students ul li.active .bi {
-    /* fill: purple; */
-}
-.SideBar-Students ul li.active .topPiece,
-.SideBar-Students ul li.active .bottomPiece {
-    opacity: 1;
-}
-.SideBar-Students ul li.active a {
-    color: #865da7;
-}
+
+
+
 
 
 
@@ -134,6 +94,7 @@
     text-decoration: none;
     transition: .5s ease;
     font-size: 18px;
+    fill: white;
 }
 
 .Miniside-bar ul li {

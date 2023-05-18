@@ -19,3 +19,6 @@ when evey my key changes our route become a new compoent ...so AnimatePresence m
 
 
 note ... never put a stracture of the pages withthe routes.... only put the routes and maybe nav and footer ... nothing eles
+
+
+setstate is an async operation

@@ -65,6 +65,86 @@ function CoursesDeatails() {
                     <li className='mb-2'>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
                 </ul>
             </div>
+            <div className='about-instructor'>
+                <h4>About the instructor</h4>
+                <div className='about-instructor-container d-flex gap-5'>
+
+                    <div className='about-instructor-container-left'>
+                        <img src={imguser} alt="instructor-img" className='rounded-circle mb-3' width="100" height="100" />
+                        <ul className='d-flex flex-column gap-2'>
+                            <li>
+                                <p> 4.6 Instructor Rating</p>
+                            </li>
+                            <li>
+                                <p> 45,786 Students</p>
+                            </li>
+                            <li>
+                                <p>  2,533 Reviews</p>
+                            </li>
+                            <li>
+                                <p>  24 Courses</p>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div className='about-instructor-container-right w-75'>
+                        <h4 className='m-0'>YamenNa</h4>
+                        <p>Joined 4 years ago</p>
+                        <p className='fw-bold my-2'>Java Python Android and C# Expert Developer - 878K+ students</p>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                    </div>
+                </div>
+            </div>
+            <div className='student-feedback'>
+                <h4>Student feedback</h4>
+                <div className='student-feedback-container d-flex flex-wrap gap-5 pt-3'>
+                    <div className='student-feedback-container-left p-4 pt-0 text-center'>
+                        <p className='display-2 fw-bold'>4.6</p>
+                        <RatingStars />
+                        <p>(2,533)</p>
+                        <p>Course Rating</p>
+                    </div>
+                    <div className='student-feedback-container-right'  style={{maxWidth:"500px" , width:"100%"}}>
+                        <div className='d-flex gap-3 mb-3'>
+                            <span>5 stars</span>
+                            <div class="progress w-75" >
+                                <div class="progress-bar bg-danger" role="progressbar" aria-label="Success example" style={{ width: "40%" }} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <span>70%</span>
+                        </div>
+                        <div className='d-flex gap-3 mb-3'>
+                            <span>5 stars</span>
+                            <div class="progress w-75" >
+                                <div class="progress-bar bg-danger" role="progressbar" aria-label="Success example" style={{ width: "40%" }} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <span>70%</span>
+                        </div>
+                        <div className='d-flex gap-3 mb-3'>
+                            <span>5 stars</span>
+                            <div class="progress w-75" >
+                                <div class="progress-bar bg-danger" role="progressbar" aria-label="Success example" style={{ width: "40%" }} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <span>70%</span>
+                        </div>
+                        <div className='d-flex gap-3 mb-3'>
+                            <span>5 stars</span>
+                            <div class="progress w-75" >
+                                <div class="progress-bar bg-danger" role="progressbar" aria-label="Success example" style={{ width: "40%" }} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <span>70%</span>
+                        </div>
+                        <div className='d-flex gap-3 mb-3'>
+                            <span>5 stars</span>
+                            <div class="progress w-75" >
+                                <div class="progress-bar bg-danger" role="progressbar" aria-label="Success example" style={{ width: "40%" }} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <span>70%</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
 
             <div className='Description'>
                 <h4>Description</h4>
@@ -72,6 +152,7 @@ function CoursesDeatails() {
                 <p className='mb-3'>t has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy</p>
             </div>
             <div className='Comments-course'>
+                <h4>Reviews</h4>
                 <div className='comments-course-container w-75 pb-2'>
 
                     <div className='comment-course border-bottom border-1  d-flex gap-2 pb-3 mb-2'>

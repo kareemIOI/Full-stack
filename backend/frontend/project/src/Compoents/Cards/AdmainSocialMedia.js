@@ -34,8 +34,8 @@ let socials = [
 function AdmainSocialMedia() {
     return (
         <div className='Admain-social-media-cards flex-wrap d-flex justify-content-around mt-5'>
-            {socials.map((ele)=>(
-            <div className='social-media-card text-white rounded' style={{backgroundColor:ele.background}}>
+            {socials.map((ele , index)=>(
+            <div key={index} className='social-media-card text-white rounded' style={{backgroundColor:ele.background}}>
                 <span>{ele.icon} </span>
                 <span>{ele.sentence}</span>
                 <h5>{ele.number}</h5>

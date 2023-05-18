@@ -33,3 +33,49 @@ table {
 .purple-background {
   background-color: rgb(184, 0, 184);
 }
+
+.loading-cirlce{
+  width: 150px ;
+  height: 150px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50% , -50%);
+  z-index: 1111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* animation: rotate 2s  .5s infinite; */
+
+}
+.loading-cirlce .circle{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border-top: 7px solid rgb(126, 62, 129);
+}
+.loading-cirlce .circle1{
+  width: 130px;
+  height: 130px;
+  animation: rotate 1.6s  .4s infinite;
+}
+.loading-cirlce .circle2 {
+  width: 110px;
+  height: 110px;
+  animation: rotate 1.3s  .1s infinite;
+}
+.loading-cirlce .circle3{
+  width: 80px;
+  height: 80px;
+  animation: rotate 1s  .1s infinite;
+}
+
+@keyframes rotate {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}

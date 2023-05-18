@@ -39,3 +39,65 @@ button.addform-btn:hover{
     background-color: purple;
     color: white;
 }
+
+
+
+
+
+
+
+
+
+
+.EditUserForm{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    z-index: 1000000;
+    padding: 20px;
+}
+.EditUserForm .edit-user-container{
+    max-width: 700px;
+    width: 100%;
+    height: 500px;
+    background-color: white;
+    z-index: 0;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.EditUserForm .edit-user-container .edit-user-bar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: purple;
+    text-align: center;
+    padding: 20px 0;
+    color: white;
+    font-weight: bold;
+}
+.edit-user-container .edit-user-close{
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    
+}
+.EditUserForm .backkground-layer{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.556);
+    position: absolute;
+    top: 0;
+    left: 0;
+}

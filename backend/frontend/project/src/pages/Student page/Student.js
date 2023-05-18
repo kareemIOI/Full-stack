@@ -11,9 +11,9 @@ import SettingsStu from "./settingsstu"
 import Library from "./Library"
 // Componets
 import Header from "../../Compoents/Header/Header"
-import MiniSideBar from "../../Compoents/SideBar/MiniSideBar"
+import MiniSideBar from "../../Compoents/SideBar/MiniSideBarStudents"
 import NavBar from "../../Compoents/Navs/DashboardNav"
-import SlideBar from "../../Compoents/SideBar/SideBar"
+import SlideBar from "../../Compoents/SideBar/SideBarStudent"
 import './student.css'
 import { AnimatePresence } from "framer-motion"
 import AllCourses from "./AllCourses"
@@ -27,28 +27,29 @@ function Studentpage() {
     window.onload = function () {
         navigate('/stu')
     }
-    //~ get the Theme from the localStorge
+    const location = useLocation()
+
     useEffect(() => {
+        //~ get the Theme from the localStorge
         if (localStorage.getItem("theme-color")) {
             Theme.toggleTheme(JSON.parse(localStorage.getItem("theme-color")))
         }
     }, [])
-    const location = useLocation()
     return (
-        <>
-        {/* <Loadingscreen /> */}
-            <NavBar />
+        <div className="d-flex">
+            {/* <Loadingscreen /> */}
             <SlideBar />
             <MiniSideBar />
+
+
             <div className="landing">
-                <div className="col pb-3 px-4">
-                    <section>
-                        <Header />
-                    </section>
+                <NavBar />
+                <div className="col py-3 px-4">
+                    <Header />
                     <AnimatePresence mode="wait">
                         <Routes key={location.pathname} location={location}>
                             <Route path="/" element={<Acadmic />}> </Route>
-                            <Route path="/allcourses/*" element={<AllCourses/>}> </Route>
+                            <Route path="/allcourses/*" element={<AllCourses />}> </Route>
                             <Route path="/news" element={<News />}> </Route>
                             <Route path="/news" element={<Library />}> </Route>
                             <Route path="/chat" element={<Chatstu />} />
@@ -58,7 +59,7 @@ function Studentpage() {
                     </AnimatePresence>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 export default Studentpage

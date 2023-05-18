@@ -25,12 +25,12 @@ export default function Activites() {
             <section>
                 <Linechart />
             </section>
-            <section>
+            {/* <section>
                 <WebTrafficChart />
-            </section>
-            <section>
+            </section> */}
+            {/* <section>
                 <Piechart />
-            </section>
+            </section> */}
             <div className='admain-socialmedia'>
                 <AdmainSocialMedia />
             </div>

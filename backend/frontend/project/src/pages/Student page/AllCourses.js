@@ -1,7 +1,7 @@
 import React from 'react'
 import { Routes , Route } from 'react-router-dom';
-import CoursesDeatails from '../../pages/Student page/CoursesDeatails';
 import Courses from './Cources';
+import LessonDetails from './LessonDetails';
 
 // Make the pagenationi
 
@@ -11,7 +11,7 @@ function AllCourses() {
         <div>
             <Routes>
                 <Route path="" element={<Courses />} />
-                <Route path=":id" element={<CoursesDeatails />} />
+                <Route path="/:id" element={<LessonDetails />} />
             </Routes>
         </div>
     )

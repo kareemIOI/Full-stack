@@ -12,25 +12,25 @@ import { useNavigate } from 'react-router-dom'
 import Header from '../../Compoents/Header/Header'
 import MiniSideBar from '../../Compoents/SideBar/MiniSideBarAdmain'
 import NavBar from '../../Compoents/Navs/DashboardNav'
-import SlideBar from '../../Compoents/SideBar/SideBarAdmain'
+import SideBarAdmin from '../../Compoents/SideBar/SideBarAdmin'
 
 
 export default function Admain() {
     let navigate = useNavigate()
     window.onload = function () {
-        navigate('/admain')
+        navigate('/admin')
     }
 
+
+    // overflow hidden ruin the postion sticky
     return (
-        <>
-            <NavBar />
-            <SlideBar />
+        <div className='d-flex' style={{overflow:""}}>
+            <SideBarAdmin />
             <MiniSideBar />
-            <div className="landing">
-                <div className="col pb-3 px-4">
-                    <section>
-                        <Header />
-                    </section>
+            <div className="landing" style={{overflow:"hidden"}}>
+                <NavBar />
+                <div className="col py-3 px-4">
+                    <Header />
                     <Routes>
                         <Route path="/" element={<Activites />}> </Route>
                         <Route path="/allusers" element={<AllUsers />}> </Route>
@@ -42,6 +42,6 @@ export default function Admain() {
                     </Routes>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
