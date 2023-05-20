@@ -18,7 +18,7 @@ import SideBarAdmin from '../../Compoents/SideBar/SideBarAdmin'
 export default function Admain() {
     let navigate = useNavigate()
     window.onload = function () {
-        navigate('/admin')
+        navigate('/manager')
     }
 
 

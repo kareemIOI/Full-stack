@@ -74,7 +74,7 @@ function SideBarAdmin() {
 
 
                 <li className="active">
-                    <Link onClick={sideBarliToggle} className="link d-flex" to={'/admin/'}>
+                    <Link onClick={sideBarliToggle} className="link d-flex" to={'/manager/'}>
                         <span className="">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill={Theme.sideBar} className="bi bi-book" viewBox="0 0 16 16">
                                 <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z" />
@@ -85,7 +85,7 @@ function SideBarAdmin() {
                 </li>
 
 
-                <li><Link onClick={sideBarliToggle} className="link  d-flex" to={'/admin/add'}>
+                <li><Link onClick={sideBarliToggle} className="link  d-flex" to={'/manager/add'}>
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fillRule="currentColor" className="bi bi-infinity" viewBox="0 0 16 16">
                             <path d="M5.68 5.792 7.345 7.75 5.681 9.708a2.75 2.75 0 1 1 0-3.916ZM8 6.978 6.416 5.113l-.014-.015a3.75 3.75 0 1 0 0 5.304l.014-.015L8 8.522l1.584 1.865.014.015a3.75 3.75 0 1 0 0-5.304l-.014.015L8 6.978Zm.656.772 1.663-1.958a2.75 2.75 0 1 1 0 3.916L8.656 7.75Z" />
@@ -93,7 +93,7 @@ function SideBarAdmin() {
                     </span><span className="sidebar-itme-text ms-2">Add User</span></Link></li>
 
 
-                <li><Link onClick={sideBarliToggle} className="link d-flex" to={'/admin/allusers'}>
+                <li><Link onClick={sideBarliToggle} className="link d-flex" to={'/manager/allusers'}>
                     <span >
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fillRule="currentColor"  className="bi bi-chat-dots" viewBox="0 0 16 16">
                             <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
@@ -102,24 +102,24 @@ function SideBarAdmin() {
                     </span><span className="sidebar-itme-text ms-2">All Users</span></Link></li>
 
 
-                <li><Link onClick={sideBarliToggle} className="link d-flex" to={'/admin/library'}>
+                <li><Link onClick={sideBarliToggle} className="link d-flex" to={'/manager/library'}>
                     <span ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fillRule="currentColor"  className="bi bi-person-badge-fill" viewBox="0 0 16 16">
                         <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm4.5 0a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm5 2.755C12.146 12.825 10.623 12 8 12s-4.146.826-5 1.755V14a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-.245z" />
                     </svg></span><span className="sidebar-itme-text ms-2">Library</span></Link></li>
 
 
-                <li><Link onClick={sideBarliToggle} className="link d-flex" to={'/admin/classes'}>
+                <li><Link onClick={sideBarliToggle} className="link d-flex" to={'/manager/classes'}>
                     <span ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fillRule="currentColor"  className="bi bi-gear-fill" viewBox="0 0 16 16">
                         <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
                     </svg></span><span className="sidebar-itme-text ms-2">Classes</span></Link></li>
 
 
-                <li><Link onClick={sideBarliToggle} className="link d-flex" to={'/admin/news'}>
+                <li><Link onClick={sideBarliToggle} className="link d-flex" to={'/manager/news'}>
                     <span ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fillRule="currentColor"  className="bi bi-gear-fill" viewBox="0 0 16 16">
                         <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
                     </svg></span><span className="sidebar-itme-text ms-2">News</span></Link></li>
 
-                <li><Link onClick={sideBarliToggle} className="link d-flex" to={'/admin/transports'}>
+                <li><Link onClick={sideBarliToggle} className="link d-flex" to={'/manager/transports'}>
                     <span ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fillRule="currentColor"  className="bi bi-box-arrow-in-left" viewBox="0 0 16 16">
                         <path filerule="evenodd" d="M10 3.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 1 0v2A1.5 1.5 0 0 1 9.5 14h-8A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h8A1.5 1.5 0 0 1 11 3.5v2a.5.5 0 0 1-1 0v-2z" />
                         <path filerule="evenodd" d="M4.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H14.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z" />
